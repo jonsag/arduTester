@@ -94,8 +94,6 @@ F 3 "" H 5500 1900 50  0001 C CNN
 	1    5500 1900
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5500 2150 5500 1900
 $Comp
 L My_Headers:2-pin_power_input_header J2
 U 1 1 601FFE60
@@ -404,9 +402,6 @@ Wire Wire Line
 	6100 4350 6100 3500
 Wire Wire Line
 	6100 3500 5800 3500
-Wire Wire Line
-	6100 3500 6100 1950
-Connection ~ 6100 3500
 $Comp
 L power:+5V #PWR08
 U 1 1 6024F048
@@ -453,10 +448,10 @@ TP2
 Text GLabel 1850 6350 0    50   Input ~ 0
 TP3
 $Comp
-L power:GND #PWR?
+L power:GND #PWR0101
 U 1 1 60208A59
 P 5200 4400
-F 0 "#PWR?" H 5200 4150 50  0001 C CNN
+F 0 "#PWR0101" H 5200 4150 50  0001 C CNN
 F 1 "GND" H 5205 4227 50  0000 C CNN
 F 2 "" H 5200 4400 50  0001 C CNN
 F 3 "" H 5200 4400 50  0001 C CNN
@@ -465,4 +460,22 @@ F 3 "" H 5200 4400 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5200 4400 5200 4300
+Wire Wire Line
+	5500 1900 5500 2200
+$Comp
+L Device:R R?
+U 1 1 60206E23
+P 6100 2300
+F 0 "R?" H 6170 2346 50  0000 L CNN
+F 1 "10k" H 6170 2255 50  0000 L CNN
+F 2 "" V 6030 2300 50  0001 C CNN
+F 3 "~" H 6100 2300 50  0001 C CNN
+	1    6100 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 3500 6100 2450
+Connection ~ 6100 3500
+Wire Wire Line
+	6100 2150 6100 1950
 $EndSCHEMATC
