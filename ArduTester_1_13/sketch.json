@@ -1,0 +1,9 @@
+{
+  "cpu": {
+    "fqbn": "arduino:avr:uno",
+    "name": "Arduino/Genuino Uno",
+    "type": "serial"
+  },
+  "secrets": [],
+  "included_libs": []
+}
