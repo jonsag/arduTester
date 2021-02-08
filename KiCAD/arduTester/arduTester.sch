@@ -463,12 +463,12 @@ Wire Wire Line
 Wire Wire Line
 	5500 1900 5500 2200
 $Comp
-L Device:R R?
+L Device:R R8
 U 1 1 60206E23
 P 6100 2300
-F 0 "R?" H 6170 2346 50  0000 L CNN
+F 0 "R8" H 6170 2346 50  0000 L CNN
 F 1 "10k" H 6170 2255 50  0000 L CNN
-F 2 "" V 6030 2300 50  0001 C CNN
+F 2 "My_Misc:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal_larger_pads" V 6030 2300 50  0001 C CNN
 F 3 "~" H 6100 2300 50  0001 C CNN
 	1    6100 2300
 	1    0    0    -1  

@@ -16,12 +16,15 @@ include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/dip.scad>
 include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/displays.scad>
 include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/buttons.scad>
 include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/axials.scad>
+include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/jack.scad>
+
+use <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/pcb.scad>
 
 // lay out for printing
-print = true;
+print = false;
 
 showBottom = true;
-showLid = false;
+showLid = true;
 
 // show arduino board and shield
 showArd = true;
@@ -38,7 +41,7 @@ usbHole = true;
 powHole = false;
 
 // arduino stand offs
-soBotHeight = 4;
+soBotHeight = 6;
 soBotDia = 9;
 
 soTopHeight = 1;
@@ -130,10 +133,10 @@ if ((showArd) && (!print)) {
 
 if ((showShield) && (!print) && (shieldType)) {
   if (shieldType == 1) {
-    translate([0.45, 0.35, 17.9])
+    translate([0.45, 0.35, 12.9 + soBotHeight + soTopHeight])
       shieldType1();
   } else if (shieldType == 2) {
-    translate([-10.9, -3.45, 17.9])
+    translate([-10.9, -3.45, 12.9 + soBotHeight + soTopHeight])
       shieldType2();
   }
 }
@@ -154,6 +157,8 @@ if (showLid) {
         lid();
         if (shieldType == 1) {
           lidOpeningsType1();
+        } else if (shieldType == 2) {
+          lidOpeningsType2();
         }
       }
   } else {
@@ -162,6 +167,8 @@ if (showLid) {
       lid();
       if (shieldType == 1) {
         lidOpeningsType1();
+      } else if (shieldType == 2) {
+        lidOpeningsType2();
       }
     }
   }
@@ -676,7 +683,12 @@ module shieldType2() {
     ax_res(res1_4, 680);
 
   // resistor R1
-  translate([61.59, 28.57, 2])
+  translate([61.59, 29.21, 2])
+    rotate([0, 0, 0])
+    ax_res(res1_4, 330);
+
+  // resistor R8
+  translate([88.27, 29.21, 2])
     rotate([0, 0, 0])
     ax_res(res1_4, 10000);
 
@@ -684,9 +696,68 @@ module shieldType2() {
   translate([ 85.09 + 2.54 * 1.5, 45.09 - 2.54 / 2, 1.6])
     rotate([0, 0, 90])
     pin_headers(1, 2);
+
+  // potentiometer
+  translate([26.04, 22.18, 1.6])
+    rotate([0, 0, 0])
+    potentiometer(4, 0);
+    //trimpot10();
+
+  // test jacks
+  translate([20, 50.16, 19.1])
+    rotate([0, 0, 0])
+  jack_4mm("blue",3, "white");
+
+  translate([40, 50.16, 19.1])
+    rotate([0, 0, 0])
+    jack_4mm("blue",3, "purple");
+  
+  translate([60, 50.16, 19.1])
+    rotate([0, 0, 0])
+    jack_4mm("blue",3, "orange");
 }
 
 module lidOpeningsType2() {
-  xOffset = casWallThick + extraWidthL; // + 0.4;
-  yOffset = casWallThick + extraDepthD; // + 0.3;
+  xOffset = casWallThick + extraWidthL - 10.7; // + 0.4;
+  yOffset = casWallThick + extraDepthD - 3.45; // + 0.3;
+
+  translate([-extraWidthL - casWallThick, -extraDepthD - casWallThick, 0])
+  union() {
+  // LCD display
+  translate([xOffset + 40.01 + 32, 
+            yOffset + 38.1 - 15.5, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    color("red")
+    cube([72, 24.9, lidThick + lidInset], center = true);
+
+  // banana jacks
+  translate([xOffset + 20, yOffset + 50.16, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    bananaJackHole(lidThick + lidInset);
+
+  translate([xOffset + 40, yOffset + 50.16, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    bananaJackHole(lidThick + lidInset);
+
+  translate([xOffset + 60, yOffset + 50.16, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    bananaJackHole(lidThick + lidInset);
+
+  // test header
+  translate([xOffset + 6.35, yOffset + 12.7, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    cube([5, 10 , lidThick + lidInset], center = true);
+
+  // test button
+  translate([xOffset + 100.13, yOffset + 50.24, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    cylinder(h = lidThick + lidInset, d = 10, center = true, $fn = roundness);
+  }
+}
+
+module bananaJackHole(thickness) {
+  intersection() {
+    cylinder(h = thickness, d = 8.33, center = true, $fn = roundness);
+    cube([6.35, 8.33, thickness], center = true);
+  }
 }
