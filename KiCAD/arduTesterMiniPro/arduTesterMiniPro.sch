@@ -81,7 +81,7 @@ U 1 1 601FFE60
 P 4700 1550
 F 0 "J3" H 4663 1683 50  0000 C CNN
 F 1 "2-pin_power_input_header" H 4700 1350 50  0001 C CNN
-F 2 "My_Headers:2-pin_power_input_header" H 4750 1250 50  0001 C CNN
+F 2 "My_Headers:2-pin_power_input_header_larger_pads" H 4750 1250 50  0001 C CNN
 F 3 "~" H 4700 1550 50  0001 C CNN
 	1    4700 1550
 	-1   0    0    -1  
