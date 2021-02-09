@@ -21,9 +21,9 @@ include <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/jack.scad>
 use <../../myCAD/OpenSCADlibraries/NopSCADlib/vitamins/pcb.scad>
 
 // lay out for printing
-print = false;
+print = true;
 
-showBottom = true;
+showBottom = false;
 showLid = true;
 
 // show arduino board and shield
@@ -715,6 +715,11 @@ module shieldType2() {
   translate([60, 50.16, 19.1])
     rotate([0, 0, 0])
     jack_4mm("blue",3, "orange");
+
+  // reset button
+  translate([25.32, 13.04, 1.7])
+    rotate([0, 0, 0])
+    square_button(button_6mm);
 }
 
 module lidOpeningsType2() {
@@ -752,6 +757,11 @@ module lidOpeningsType2() {
   translate([xOffset + 100.13, yOffset + 50.24, 
             (lidThick + lidInset) / 2 - lidInset + tolerance])
     cylinder(h = lidThick + lidInset, d = 10, center = true, $fn = roundness);
+
+  // reset button
+  translate([xOffset + 25.32, yOffset + 13.04, 
+            (lidThick + lidInset) / 2 - lidInset + tolerance])
+    cylinder(h = lidThick + lidInset, d = 5, center = true, $fn = roundness);
   }
 }
 
