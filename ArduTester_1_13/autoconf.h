@@ -160,10 +160,10 @@
 
 /* check the R_L_VAL and R_H_VAL setting */
 #ifndef R_L_VAL
-  #define R_L_VAL 6800          // standard value 680 Ohm, multiplied by 10 for 0.1 Ohm resolution
+  #define R_L_VAL 6790          // standard value 680 Ohm, multiplied by 10 for 0.1 Ohm resolution
 #endif
 #ifndef R_H_VAL
-  #define R_H_VAL 47000         // standard value 470000 Ohm, multiplied by 10, divided by 100 
+  #define R_H_VAL 46800         // standard value 470000 Ohm, multiplied by 10, divided by 100 
 #endif
 
 /* check the R_ANZ_MESS setting */
