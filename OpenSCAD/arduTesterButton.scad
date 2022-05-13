@@ -1,13 +1,13 @@
 // ardutesterButton.scad
 
-totalHeight = 13;
+totalHeight = 15;
 stemHeight = 10;
 
 holeDepth = 10;
 
 topDia = 9.5;
 stemDia = 12;
-holeDia = 7;
+holeDia = 8;
 
 roundness = 100;
 
