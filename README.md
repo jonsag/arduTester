@@ -1,5 +1,6 @@
 # arduTester
-An arduino component tester based on https://create.arduino.cc/projecthub/plouc68000/ardutester-v1-13-the-arduino-uno-transistor-tester-dbafb4
+
+An arduino component tester based on [this](https://create.arduino.cc/projecthub/plouc68000/ardutester-v1-13-the-arduino-uno-transistor-tester-dbafb4)
 
 ## Prerequisites
 
@@ -14,7 +15,7 @@ An arduino component tester based on https://create.arduino.cc/projecthub/plouc6
 
 ### ATmega320
 
-Pin no ->  
+Pin no ->
 1 -> Reset
 2 -> D0
 3 -> D1

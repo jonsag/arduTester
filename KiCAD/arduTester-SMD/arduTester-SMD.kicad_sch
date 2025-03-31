@@ -5428,6 +5428,53 @@
 			)
 		)
 	)
+	(sheet
+		(at 255.27 151.13)
+		(size 12.7 3.81)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "a9454f29-7a2c-4810-bfb9-890d97663f07")
+		(property "Sheetname" "atmega"
+			(at 255.27 150.4184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "atmega.kicad_sch"
+			(at 255.27 155.5246 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 255.27 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "arduTester-SMD"
+				(path "/46fbff5f-5f07-426e-abff-92611b77fb42"
+					(page "2")
+				)
+			)
+		)
+	)
 	(sheet_instances
 		(path "/"
 			(page "1")

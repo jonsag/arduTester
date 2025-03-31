@@ -440,7 +440,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "arduTester.kicad_pro",
+    "filename": "arduTester-SMD.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -597,6 +597,10 @@
     [
       "46fbff5f-5f07-426e-abff-92611b77fb42",
       "Root"
+    ],
+    [
+      "a9454f29-7a2c-4810-bfb9-890d97663f07",
+      "atmega"
     ]
   ],
   "text_variables": {}

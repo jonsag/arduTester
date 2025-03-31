@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"cSpell.words": [
+			"ardu",
+			"mikrocontroller",
+			"transistortester"
+		]
+	}
+}
