@@ -8,7 +8,8 @@
 		"cSpell.words": [
 			"ardu",
 			"mikrocontroller",
-			"transistortester"
+			"transistortester",
+			"usbtiny"
 		]
 	}
 }

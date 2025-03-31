@@ -1,0 +1,51 @@
+(kicad_sch
+	(version 20231120)
+	(generator "eeschema")
+	(generator_version "8.0")
+	(uuid "c8b63c3f-d4e8-4a50-89a3-f1c16cae0a54")
+	(paper "A4")
+	(lib_symbols)
+	(sheet
+		(at 143.51 166.37)
+		(size 12.7 3.81)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8c14ef75-6b7d-4cb1-8711-d8693b8f64e9")
+		(property "Sheetname" "ATmega328"
+			(at 143.51 165.6584 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ATmega328.kicad_sch"
+			(at 143.51 170.7646 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Atmega-Transistor-Tester"
+				(path "/c8b63c3f-d4e8-4a50-89a3-f1c16cae0a54"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+)

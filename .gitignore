@@ -3,3 +3,7 @@ KiCAD/arduTester/arduTester-backups/
 fp-info-cache
 KiCAD/arduTester-SMD/arduTester-backups/
 KiCAD/arduTester-SMD/arduTester-SMD-backups/
+KiCAD/Atmega-Transistor-Tester/Atmega-Transistor-Tester-backups/
+.gitignore
+KiCAD/Atmega-Transistor-Tester/ATmega328base-backups/
+*.kicad_sch.lck
